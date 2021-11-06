@@ -1,0 +1,116 @@
+.fa-trash,
+.fa-check {
+	pointer-events: none;
+}
+
+body {
+	background-color: #6E0A1E;
+	color: white;
+	min-height: 100vh;
+	font-family: 'Scheherazade New', serif;
+}
+header {
+	font-size: 3.5rem;
+}
+h1 {
+	font-size: 3.5rem;
+}
+header,
+form {
+	min-height: 13vh;
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border: none;
+}
+.select {
+	margin: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+select {
+	color: #e1ad01;
+	width: 10rem;
+	cursor: pointer;
+}
+.select::after {
+	content: "\25BC";
+}
+.select:hover::after {
+	background: white;
+	color: #ff6f72;
+}
+form input,
+form button {
+	padding: 0.5rem;
+	font-size: 2rem;
+	border: none;
+	background: white;
+}
+form button:hover {
+	background: #00022e;
+	color: white;
+}
+.formTodo {
+	flex-flow: wrap;
+}
+form button {
+	color: #00022e;
+	background: white;
+	cursor: pointer;
+	transition: all 0.5s ease-out;
+}
+.todo {
+	margin: 0.5rem;
+	background: white;
+	color: black;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+    transition: all 0.4s linear;
+}
+.todo li {
+	flex: 1;
+    margin-top: inherit;
+}
+.todo-list {
+	min-width: 30%;
+	list-style: none;
+}
+.todo-list {
+	min-width: 30%;
+	list-style: none;
+}
+.trash-btn,
+.complete-btn {
+	background: #903a19;
+	color: white;
+	border: none;
+	padding: 1rem;
+	cursor: pointer;
+	font-size: 1rem;
+}
+.complete-btn {
+	background: #042b22;
+}
+.completed {
+	text-decoration: line-through;
+	opacity: 0.4;
+}
+.fall {
+	transform: translateX(15rem);
+	opacity: 0;
+}
+.todo-item{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.logout-btn {
+	display: sticky;
+	margin-bottom: 0px;
+	margin-right: 0px;
+}

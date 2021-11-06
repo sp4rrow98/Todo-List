@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://kit.fontawesome.com/09dedd6b1a.js"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static',filename='style.css') }}"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Todo List</title>
+
+	</head>
+	<body>
+		{% block content %}{% with messages =
+		get_flashed_messages(with_categories=true) %} {%if messages %} {% for
+		category, message in messages %}
+		<div class="alert alert-{{ category }} text-center" role="alert">
+			{{ message }}
+		</div>
+		{% endfor %} {% endif %} {% endwith %}
+		<!-- content -->
+
+		<header class="d-flex justify-content-center text-center">
+			<h1>Teo's Todo List</h1>
+		</header>
+		<div class="d-flex justify-content-center text-center">
+			<form action="" class="formTodo">
+				<input type="text" class="todo-input" />
+				<button class="todo-button" type="submit">
+					<i class="fas fa-plus-square"></i>
+				</button>
+				<div class="select">
+					<select name="todos" class="filter-todo">
+						<option value="all">All</option>
+						<option value="completed">Completed</option>
+						<option value="uncompleted">Uncompleted</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		<div class="todo-container d-flex justify-content-center text-center">
+			<ul class="todo-list"></ul>
+		</div>
+<div class="logout-btn">
+		<a href="{{ url_for('logout') }}" >
+			<input type="button" value="Logout"/>
+		 </a>
+</div>
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+		{% endblock %}
+	</body>
+</html>

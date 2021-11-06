@@ -1,0 +1,17 @@
+{% extends "template.html" %} {% block title %} {% endblock %} {% block
+    content %} {% with messages = get_flashed_messages(with_categories=true) %} {%if
+    messages %} {% for category, message in messages %}
+    
+    <div class="alert alert-{{ category }} text-center" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <h1>SUCCCCEESSS</h1>
+
+    {% if current_user.is_authenticated %}
+  Hi {{ current_user.UserName }}!
+{% endif %}
+
+    {% endblock %}
+    
